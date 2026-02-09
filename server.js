@@ -31,6 +31,14 @@ app.get('/movies', (req, res) => {
       res.json(movies);
 });
 
+// GET /movies/:id - Return a specific movie by ID
+app.get('/movies/:id', (req, res) => {
+    const movieId = parseInt(req.params.id);
+
+
+  
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Movie API server running at http://localhost:${port}`);
