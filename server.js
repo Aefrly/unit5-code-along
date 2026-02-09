@@ -33,10 +33,20 @@ app.get('/movies', (req, res) => {
 
 // GET /movies/:id - Return a specific movie by ID
 app.get('/movies/:id', (req, res) => {
+    const movieId = parseInt(req.params.id);  
+});
+
+// GET /movies/:id - Return a specific movie by ID
+app.get('/movies/:id', (req, res) => {
     const movieId = parseInt(req.params.id);
-
-
+    const movie = movies.find(m => m.id === movieId);
   
+	// Retunr movie if it is found
+    if (movie) {
+        res.json(movie);
+    } else {
+        res.status(404).json({ error: 'Movie not found' });
+    }
 });
 
 // Start the server
