@@ -33,11 +33,6 @@ app.get('/movies', (req, res) => {
 
 // GET /movies/:id - Return a specific movie by ID
 app.get('/movies/:id', (req, res) => {
-    const movieId = parseInt(req.params.id);  
-});
-
-// GET /movies/:id - Return a specific movie by ID
-app.get('/movies/:id', (req, res) => {
     const movieId = parseInt(req.params.id);
     const movie = movies.find(m => m.id === movieId);
   
