@@ -7,11 +7,6 @@ app.use(express.json());
 
 // Sample movie data not shown
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Movie API server running at http://localhost:${port}`);
-});
-
 // Root endpoint - API homepage
 app.get('/', (req, res) => {
     res.json({ 
@@ -21,4 +16,9 @@ app.get('/', (req, res) => {
             "GET /movies/:id": "Get a specific movie by ID" 
         } 
     }); 
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Movie API server running at http://localhost:${port}`);
 });
