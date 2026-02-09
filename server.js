@@ -5,12 +5,13 @@ const port = 3000;
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Sample movie data not shown
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Movie API server running at http://localhost:${port}`);
-});
+// Sample movie data
+const movies = [
+  { id: 1, title: "The Shawshank Redemption", director: "Frank Darabont", year: 1994, genre: "Drama" },
+  { id: 2, title: "The Godfather", director: "Francis Ford Coppola", year: 1972, genre: "Crime" },
+  { id: 3, title: "Pulp Fiction", director: "Quentin Tarantino", year: 1994, genre: "Crime" },
+  { id: 4, title: "The Dark Knight", director: "Christopher Nolan", year: 2008, genre: "Action" }
+];
 
 // Root endpoint - API homepage
 app.get('/', (req, res) => {
@@ -27,4 +28,9 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
       // Sends back the movies as JSON as the response to the request
       res.json(movies);
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Movie API server running at http://localhost:${port}`);
 });
