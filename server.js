@@ -17,6 +17,7 @@ const movies = [
 app.get('/', (req, res) => {
     res.json({ 
         message: "Welcome to the Movie API", 
+        movies: movies,
         endpoints: { 
             "GET /movies": "Get all movies", 
             "GET /movies/:id": "Get a specific movie by ID" 
