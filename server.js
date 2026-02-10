@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
         movies: movies,
         endpoints: { 
             "GET /movies": "Get all movies", 
-            "GET /movies/:id": "Get a specific movie by ID" 
+            "GET /movies/:id": "Get a specific movie by ID",
+            "POST /movies": "Create a new movie"
         } 
     }); 
 });
