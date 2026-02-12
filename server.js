@@ -115,3 +115,13 @@ app.delete('/movies/:id', (req, res) => {
 app.listen(port, () => {
     console.log(`Movie API server running at http://localhost:${port}`);
 });
+
+// Only start server when running directly, not when testing
+if (require.main === module) {
+    app.listen(port, () => {
+         console.log(`API server running at
+    http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
